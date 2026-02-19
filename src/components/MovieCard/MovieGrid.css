@@ -1,0 +1,42 @@
+.movie-grid {
+  display: grid;
+  /* Mobile: 2 columnas máximo */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #888;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+/* Desktop Standard */
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .movie-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

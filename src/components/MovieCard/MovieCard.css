@@ -1,0 +1,108 @@
+.movie-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3; /* Formato póster vertical estándar */
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #1a1a1a; /* Color de carga mientras llega la imagen */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  isolation: isolate; /* Crea un nuevo contexto de apilamiento */
+}
+
+/* Imagen de fondo */
+.movie-card-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease-out;
+}
+
+/* Efecto Zoom en Hover */
+.movie-card:hover .movie-card-bg {
+  transform: scale(1.1);
+}
+
+/* Borde Gradiente Animado */
+.movie-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 3px; /* Grosor del borde */
+  background: linear-gradient(135deg, #FF0000 0%, #800080 100%);
+  /* Truco para mostrar solo el borde usando máscaras */
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.movie-card:hover .movie-card-border {
+  opacity: 1;
+}
+
+/* Overlay Oscuro para legibilidad */
+.movie-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top, 
+    rgba(5, 5, 5, 0.95) 0%, 
+    rgba(5, 5, 5, 0.6) 40%, 
+    rgba(5, 5, 5, 0) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  z-index: 5;
+}
+
+.movie-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.movie-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.movie-year {
+  color: #cccccc;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo Pill para el género */
+.movie-genre {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

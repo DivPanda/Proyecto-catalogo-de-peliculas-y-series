@@ -1,0 +1,77 @@
+.skeleton-card {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 16px;
+  background-color: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Animación de brillo (Shimmer Effect) */
+.skeleton-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-content {
+  padding: 1.2rem;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.skeleton-text {
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text.title {
+  height: 1.5rem;
+  width: 80%;
+  margin-bottom: 0.6rem;
+}
+
+.skeleton-text.year {
+  height: 0.9rem;
+  width: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-tags {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.skeleton-pill {
+  height: 1.4rem;
+  width: 3.5rem;
+  background-color: #2a2a2a;
+  border-radius: 50px;
+}
+
+.skeleton-pill:nth-child(2) { width: 4.5rem; }
+.skeleton-pill:nth-child(3) { width: 2.5rem; }

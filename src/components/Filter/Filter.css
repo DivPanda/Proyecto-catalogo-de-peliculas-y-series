@@ -1,0 +1,74 @@
+/* Contenedor principal de la sección de filtros */
+.filter-section {
+  width: 100%;
+  padding: 1rem 0;
+  position: sticky; /* Se mantiene visible al hacer scroll */
+  top: 0;
+  z-index: 10;
+  /* Fondo semi-transparente para efecto de capa sobre el contenido */
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Contenedor de los botones con scroll horizontal */
+.filter-container {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding: 0 1rem;
+  white-space: nowrap; /* Evita que los botones salten de línea */
+  
+  /* Ocultar barra de scroll pero mantener funcionalidad */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Estilo base del botón (Pill) */
+.filter-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Evita que los botones se aplasten */
+  font-family: inherit;
+}
+
+/* Estado Hover */
+.filter-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Estado Activo (Gradiente de la marca) */
+.filter-pill.active {
+  background: linear-gradient(135deg, #FF0000 0%, #800080 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(128, 0, 128, 0.4);
+}
+
+/* Desktop Styles: Grid de filtros para ver todo de un vistazo */
+@media (min-width: 768px) {
+  .filter-container {
+    flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea */
+    justify-content: center; /* Centra el grupo de botones */
+    overflow-x: visible; /* Elimina el scroll horizontal */
+    white-space: normal; /* Permite saltos de línea */
+    
+    /* Restricciones de ancho para que no se vea desordenado en pantallas muy anchas */
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
