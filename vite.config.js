@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Proyecto-catalogo-de-peliculas-y-series/'
+  base: '/Proyecto-catalogo-de-peliculas-y-series/',
 })
