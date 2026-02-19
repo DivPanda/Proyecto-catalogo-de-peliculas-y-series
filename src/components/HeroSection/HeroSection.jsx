@@ -12,7 +12,7 @@ const HeroSection = ({ onSearch }) => {
 
   return (
     <header className="hero-header">
-      <motion.div 
+      <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,11 +21,13 @@ const HeroSection = ({ onSearch }) => {
         <h1 className="hero-title">
           Tu catálogo de películas y series
         </h1>
-        
+
+        <p className='hero-paragraph'>El mejor espacio para redescubrir o encontrar series, animes y películas con el mejor estilo.</p>
+
         <div className="search-bar-container">
           <Search className="search-icon" aria-hidden="true" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             className="search-input"
             placeholder="Busca películas o series"
             aria-label="Buscar películas o series"

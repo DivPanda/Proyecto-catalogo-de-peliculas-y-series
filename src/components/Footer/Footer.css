@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  z-index: 100; /* Menor que el modal (1000) pero sobre el contenido */
+  z-index: 100;
+  /* Menor que el modal (1000) pero sobre el contenido */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,14 @@
 }
 
 .github-link:hover {
-  color: #FF0000; /* Color primario del gradiente de la marca */
+  color: #FF0000;
+  /* Color primario del gradiente de la marca */
   transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+
+    width: 100%;
+  }
 }

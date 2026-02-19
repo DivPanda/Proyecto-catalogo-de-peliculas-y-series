@@ -37,6 +37,10 @@ body {
   max-width: 90%;
 }
 
+.hero-paragraph {
+  color: #f8f5f7;
+}
+
 /* Barra de búsqueda */
 .search-bar-container {
   display: flex;
@@ -100,6 +104,10 @@ body {
 @media (min-width: 1024px) {
   .hero-header {
     min-height: 30vh;
+  }
+
+  .hero-paragraph {
+    font-size: 20px;
   }
 
   .search-bar-container {
