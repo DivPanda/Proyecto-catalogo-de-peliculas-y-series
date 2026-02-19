@@ -22,8 +22,8 @@ Una aplicación web moderna y responsiva para explorar un catálogo de película
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone https://github.com/tu-usuario/catalogo-peliculas.git
-    cd catalogo-peliculas
+    git clone [https://github.com/tu-usuario/catalogo-peliculas.git](https://github.com/DivPanda/Proyecto-catalogo-de-peliculas-y-series.git)
+    cd catalogo-de-peliculas-y-series
     ```
 
 2.  **Instalar dependencias:**
