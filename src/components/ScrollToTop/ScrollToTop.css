@@ -6,8 +6,8 @@
   color: white;
   border: none;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,4 +21,11 @@
 .scroll-to-top:hover {
   transform: translateY(-5px);
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .scroll-to-top {
+    width: 60px;
+    height: 60px;
+  }
 }
