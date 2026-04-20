@@ -43,7 +43,7 @@ Una aplicación web moderna y responsiva para explorar un catálogo de película
     ```
 
 ## Link para ver el proyecto en Github Pages
-
+https://cancridev.github.io/Proyecto-catalogo-de-peliculas-y-series/
 
 ## 📂 Estructura del Proyecto
 
